@@ -1,4 +1,4 @@
-# Typescript-Standard
+# TypeScript-Standard
 
 ### TO-DO: ADD BUILD FLAGS
 
