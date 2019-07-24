@@ -1,13 +1,25 @@
-import express from 'express';
+export default class Index {
 
-const app = express();
-const port = 3000;
-app.get('/', (req, res) => {
-  res.send('Hello from the Codecov team!');
-});
-app.listen(port, err => {
-  if (err) {
-    return console.error(err);
-  }
-  return console.log(`server is listening on ${port}`);
-});
+    //This function is tested and part of it is uncovered 
+    uncovered_if = (a = true) => {
+        if (a == true) { 
+            return false
+         } else {
+            return true
+         }
+    }
+
+    //This function will be fully covered
+    fully_covered = () => {
+        return true
+    }
+
+    //This function will not be tested by unit tests
+    uncovered = () => {
+        return true
+    }    
+    
+}
+
+
+    
