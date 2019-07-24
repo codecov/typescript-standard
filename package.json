@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && node dist/server.js",
-    "test": "jest --coverage --reporters=default"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",

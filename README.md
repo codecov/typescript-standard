@@ -14,6 +14,13 @@ This project is written in `TypeScript 3.5.3`. Unit tests are written with the `
 
 Unit tests: `src/index.test.ts` which tests `src/index.ts`
 
+## Errors Generating TypeScript Reports
+
+In some instances, there may be errors where coverage reports target transpiled JavaScript files instead of TypeScript files. This is most likely due to the fact that your test runner configuration is not set properly. 
+
+[Example repository with Jest config](https://github.com/drazisil/mco-server/blob/master/package.json#L71-L96)
+
+
 ## Reporting Issues
 
 If you've discovered an issue with this repository or with TypeScript processing in general, it is recommended to email support@codecov.io rather than post an issue here. This repository will not be checked regularly for open issues.
