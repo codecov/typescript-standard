@@ -32,9 +32,7 @@ const napTime = (milliseconds) => {
     console.log('Waiting 60 seconds for report to upload before pinging API...')
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
-  
 
-  request(options, callback)
-// napTime(60000).then(()=>{
-//     request(options, callback)
-// });
+napTime(60000).then(()=>{
+    request(options, callback)
+});
