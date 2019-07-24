@@ -7,7 +7,7 @@ const options = {
   }
 };
 
-function callback(error, response, body) {
+const callback = (error, response, body) => {
   if (!error && response.statusCode == 200) {
     const info = JSON.parse(body);
     commit_data = info['commits'][0]
@@ -15,7 +15,7 @@ function callback(error, response, body) {
     
     // Coverage percentage should be CORRECT_COVERAGE environment variable on Travis || 77.77778
     if(coverage_percentage == process.env.CORRECT_COVERAGE){
-        eturn process.exit(0);
+        return process.exit(0);
     }
 
   }else{
@@ -23,4 +23,8 @@ function callback(error, response, body) {
   }
 }
 
-request(options, callback);
+const napTime = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
+napTime(60000).then(request(options, callback));
