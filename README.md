@@ -1,6 +1,6 @@
 # TypeScript-Standard
 
-### TO-DO: ADD BUILD FLAGS
+[![Build Status](https://travis-ci.org/codecov/TypeScript-Standard.svg?branch=master)](https://travis-ci.org/codecov/TypeScript-Standard) [![codecov](https://codecov.io/gh/codecov/TypeScript-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/TypeScript-Standard)
 
 ### Last Updated: never
 
@@ -10,7 +10,9 @@ This is a **TypeScript** application, with basic unit tests, for which coverage 
 
 ## Configuration
 
-This project is written in `TypeScript 3.5.3`. 
+This project is written in `TypeScript 3.5.3`. Unit tests are written with the `Jest` testing framework. Coverage reports are also generated via `Jest`. 
+
+Unit tests: `src/index.test.ts` which tests `src/index.ts`
 
 ## Reporting Issues
 
