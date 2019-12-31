@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/codecov/TypeScript-Standard.svg?branch=master)](https://travis-ci.org/codecov/TypeScript-Standard) [![codecov](https://codecov.io/gh/codecov/TypeScript-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/TypeScript-Standard)
 
-### Last Updated: 12/30/19 17:47:19
+### Last Updated: 12/31/19 17:48:05
 
 ## What is this?
 
