@@ -21,7 +21,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/express": "^4.17.0",
     "@types/jest": "^24.0.15",
-    "codecov": "^3.5.0",
+    "codecov": "^3.6.5",
     "jest": "^24.8.0",
     "jest-junit": "^7.0.0",
     "ts-jest": "^24.0.2",
