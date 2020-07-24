@@ -9,12 +9,13 @@ const options = {
 
 const callback = (error, response, body) => {
   if (!error && response.statusCode == 200) {
-    
-    console.log('Pinging Codecov\'s API..') 
+
+    console.log('Pinging Codecov\'s API..')
     const info = JSON.parse(body);
+    console.log(info);
     commit_data = info['commits'][0]
     coverage_percentage = commit_data['totals']['c']
-    
+
     // Coverage percentage should be CORRECT_COVERAGE environment variable on Travis || 77.77778
     if(coverage_percentage == process.env.CORRECT_COVERAGE){
         console.log('Success! Codecov\'s API returned the correct coverage percentage, '+ process.env.CORRECT_COVERAGE)
@@ -23,7 +24,7 @@ const callback = (error, response, body) => {
 
   }else{
       console.log('Whoops, something is wrong D: Codecov did not return the correct coverage percentage. Coverage percentage should be '+ process.env.CORRECT_COVERAGE +' but Codecov returned '+coverage_percentage)
-      
+
         return process.exit(1);
   }
 }
