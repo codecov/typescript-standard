@@ -13,3 +13,4 @@ script:
   - npm t
   - codecov -f ./coverage/coverage-final.json
   - node request.js
+  - ./upstream.sh
