@@ -16,6 +16,7 @@ jobs:
       - name: Install dependencies
         run: |
           whoami
+          echo $USER
           npm uninstall typescript --no-save
           npm uninstall tslint --no-save
           npm install
