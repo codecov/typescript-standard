@@ -1,0 +1,28 @@
+name: Github Actions Typescript Standard
+
+on: [push]
+# on:
+#   push:
+#     branches:
+#       - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm uninstall typescript --no-save
+          npm uninstall tslint --no-save
+          npm install
+          npm install -g codecov
+          npm install -g request
+      - name: Run Script
+        run: |
+          npm t
+          codecov -f ./coverage/coverage-final.json
+          node request.js
+          ./upstream.sh
