@@ -1,10 +1,6 @@
 name: Github Actions Typescript Standard
 
-on: [push]
-# on:
-#   push:
-#     branches:
-#       - master
+on: [push, pull_request]
 
 jobs:
   build:
