@@ -7,7 +7,7 @@ on:
     branches:
       - master
 jobs:
-  standard-upload:
+  test-and-upstream:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,4 +30,7 @@ jobs:
           npm t
           codecov -f ./coverage/coverage-final.json
           node request.js
-          ./upstream.sh
+      - name: Upstream to Standards
+        if: ${{ github.event_name == 'push'}}
+        run: |
+          echo "This is ran only on push to master. This should run right now"

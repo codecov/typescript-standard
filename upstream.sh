@@ -11,6 +11,7 @@ PROJECT_NAME=$(basename `git rev-parse --show-toplevel`)
 echo $PROJECT_NAME
 COVERAGE_SHA=$(git rev-list HEAD | head -1)
 echo $COVERAGE_SHA > SHA.txt
+cat SHA.txt
 echo "Cloning the standards repo in the parent directory"
 cd ..
 git clone https://codecov:${GH_TOKEN}@github.com/codecov/standards.git
