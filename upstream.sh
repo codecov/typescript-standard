@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-stat ./coverage/coverage-final.json
 # Update this to the coverage file you want to upload to the standards repo
-COVERAGE_SOURCE_FILE=./coverage/coverage-final.json
+COVERAGE_SOURCE_FILE=/home/runner/work/typescript-standard/typescript-standard/coverage/coverage-final.json
+stat $COVERAGE_SOURCE_FILE
 
 # -=- Nothing below here should need to be changed -=-
 
@@ -26,8 +26,8 @@ cp ../$PROJECT_NAME/SHA.txt $COVERAGE_DEST_DIR/
 echo "Commiting and pushing the coverage data to the standards repo."
 git config --global user.email "devops@codecov.local"
 git config --global user.name "Codecov Devops"
+git status
 git add coverage_data
 git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
-git status
 git push origin --force
 echo "Push to upstream complete!"
