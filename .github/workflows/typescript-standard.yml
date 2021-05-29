@@ -1,11 +1,12 @@
 name: Github Actions Typescript Standard
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [push]
+# on:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+#     branches:
+#       - master
 jobs:
   test-and-upstream:
     runs-on: ubuntu-latest
@@ -25,12 +26,13 @@ jobs:
         env:
           API_KEY: ${{ secrets.API_KEY }}
           CORRECT_COVERAGE: ${{ secrets.CORRECT_COVERAGE }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           npm t
           codecov -f ./coverage/coverage-final.json
           node request.js
       - name: Upstream to Standards
-        if: ${{ github.event_name == 'push'}}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        # if: ${{ github.event_name == 'push'}}
         run: |
-          echo "This is ran only on push to master. This should run right now"
+          ./upstream.sh
