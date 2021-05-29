@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # Update this to the coverage file you want to upload to the standards repo
-COVERAGE_SOURCE_FILE=/home/runner/work/typescript-standard/typescript-standard/coverage/coverage-final.json
-stat $COVERAGE_SOURCE_FILE
+COVERAGE_SOURCE_FILE=coverage/coverage-final.json
 
 # -=- Nothing below here should need to be changed -=-
 
