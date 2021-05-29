@@ -21,6 +21,7 @@ COVERAGE_DEST_DIR="coverage_data/$PROJECT_NAME"
 mkdir -p $COVERAGE_DEST_DIR
 echo "Copying the coverage file and SHA.txt to the coverage directory"
 echo "Coverage dest dir"
+echo $COVERAGE_DEST_DIR
 ls $COVERAGE_DEST_DIR
 echo "Coverage source file Name"
 ls ..
@@ -30,7 +31,9 @@ echo "Project Name/coverage"
 ls ../$PROJECT_NAME/coverage/
 echo "Project Name/COVERAGE_SOURCE_FILE"
 ls ../$PROJECT_NAME/$COVERAGE_SOURCE_FILE
-cp ../$PROJECT_NAME/$COVERAGE_SOURCE_FILE $COVERAGE_DEST_DIR/
+echo "Project Name/coverage-final.json"
+ls ../$PROJECT_NAME/coverage/coverage-final.json
+cp ../$PROJECT_NAME/coverage/coverage-final.json $COVERAGE_DEST_DIR/
 cp ../$PROJECT_NAME/SHA.txt $COVERAGE_DEST_DIR/
 echo "Commiting and pushing the coverage data to the standards repo."
 git config --global user.email "devops@codecov.local"
