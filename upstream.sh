@@ -19,6 +19,9 @@ cd standards
 echo "Creating the coverage_data directory if it does not exist"
 COVERAGE_DEST_DIR="coverage_data/$PROJECT_NAME"
 mkdir -p $COVERAGE_DEST_DIR
+git status
+git rm --cached $COVERAGE_DEST_DIR
+git status
 echo "Copying the coverage file and SHA.txt to the coverage directory"
 cp ../$PROJECT_NAME/$COVERAGE_SOURCE_FILE $COVERAGE_DEST_DIR/
 stat ./coverage_data/typescript-standard/coverage-final.json
@@ -28,6 +31,6 @@ git config --global user.email "devops@codecov.local"
 git config --global user.name "Codecov Devops"
 git status
 git add coverage_data
-git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
-git push origin --force
+# git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
+# git push origin --force
 echo "Push to upstream complete!"
