@@ -20,7 +20,7 @@ echo "Creating the coverage_data directory if it does not exist"
 COVERAGE_DEST_DIR="coverage_data/$PROJECT_NAME"
 mkdir -p $COVERAGE_DEST_DIR
 git status
-git rm --cached $COVERAGE_DEST_DIR
+git rm --cached -r $COVERAGE_DEST_DIR
 git status
 echo "Copying the coverage file and SHA.txt to the coverage directory"
 cp ../$PROJECT_NAME/$COVERAGE_SOURCE_FILE $COVERAGE_DEST_DIR/
