@@ -32,6 +32,6 @@ git config --global user.name "Codecov Devops"
 git status
 git add coverage_data
 git status
-# git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
-# git push origin --force
+git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
+git push origin --force
 echo "Push to upstream complete!"
