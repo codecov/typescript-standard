@@ -27,7 +27,7 @@ jobs:
           CORRECT_COVERAGE: ${{ secrets.CORRECT_COVERAGE }}
         run: |
           npm t
-          codecov -f ./coverage/coverage-final.json
+          codecov
           node request.js
       - name: Upstream to Standards
         env:
