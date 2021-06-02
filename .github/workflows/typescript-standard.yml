@@ -21,7 +21,7 @@ jobs:
           npm install
           npm install -g codecov
           npm install -g request
-      - name: Run Script
+      - name: Run Tests
         env:
           API_KEY: ${{ secrets.API_KEY }}
           CORRECT_COVERAGE: ${{ secrets.CORRECT_COVERAGE }}
