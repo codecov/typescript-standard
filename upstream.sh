@@ -31,6 +31,7 @@ git config --global user.email "devops@codecov.local"
 git config --global user.name "Codecov Devops"
 git status
 git add coverage_data
+git add -f $COVERAGE_DEST_DIR/coverage-final.json
 git diff --stat --cached origin/master
 # git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
 # git push origin --force
