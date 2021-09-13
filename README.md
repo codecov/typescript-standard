@@ -3,7 +3,7 @@
 [![Workflow for Typescript Standard Action](https://github.com/codecov/typescript-standard/actions/workflows/typescript-standard.yml/badge.svg)](https://github.com/codecov/typescript-standard/actions/workflows/typescript-standard.yml) [![codecov](https://codecov.io/gh/codecov/TypeScript-Standard/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/TypeScript-Standard)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcodecov%2Ftypescript-standard.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcodecov%2Ftypescript-standard?ref=badge_shield)
 
-### Last Updated: 09/12/21 00:08:01
+### Last Updated: 09/13/21 00:06:52
 
 ## What is this?
 
