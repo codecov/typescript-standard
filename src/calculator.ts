@@ -18,6 +18,12 @@ export default class Calculator {
     return this.total
   }
 
+
+  multiply = (num) => {
+    this.value = this.value * num
+    return this.total
+  }
+
   c = () => {
     this.value = 0
     return this.total
