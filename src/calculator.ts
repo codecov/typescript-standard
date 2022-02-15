@@ -1,5 +1,5 @@
 export default class Calculator {
-  private value: number = 0;
+  private value = 0;
   constructor(value = 0) {
     this.value = value
   }
@@ -9,12 +9,12 @@ export default class Calculator {
   }
 
   plus = (num) => {
-    this.value =+ num
+    this.value = this.value + num
     return this.total
   }
 
   minus = (num) => {
-    this.value =- num
+    this.value = this.value - num
     return this.total
   }
 
