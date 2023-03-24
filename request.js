@@ -1,7 +1,7 @@
 const request = require('request');
 
 const options = {
-  url: 'https://api.codecov.io/api/v2/github/codecov/repos/TypeScript-Standard/commits'
+  url: 'https://api.codecov.io/api/v2/github/codecov/repos/TypeScript-Standard/commits',
   headers: {
     'token': process.env.API_KEY
   }
