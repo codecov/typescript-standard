@@ -10,10 +10,10 @@ jobs:
   test-and-upstream:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -25,16 +25,16 @@ jobs:
           npm uninstall typescript --no-save
           npm uninstall tslint --no-save
           npm install
-          npm install -g codecov
-          npm install -g request
       - name: Run Tests
         env:
           API_KEY: ${{ secrets.API_KEY }}
           CORRECT_COVERAGE: ${{ secrets.CORRECT_COVERAGE }}
         run: |
-          npm t
-          codecov
-          node request.js
+          npm run test
+      - name: Upload to Codecov
+        with: codecov/codecov-action@v3
+      - name: Check coverage
+        run: node request.js
       - name: Upstream to Standards
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
