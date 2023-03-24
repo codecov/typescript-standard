@@ -26,7 +26,7 @@ jobs:
         run: |
           npm run test
       - name: Upload to Codecov
-        with: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v3
       - name: Check coverage
         run: node request.js
       - name: Upstream to Standards
