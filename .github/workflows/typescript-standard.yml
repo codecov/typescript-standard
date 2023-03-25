@@ -33,6 +33,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           COVERAGE_SOURCE_FILE: ${{ secrets.COVERAGE_SOURCE_FILE }}
+          CORRECT_COVERAGE: ${{ vars.CORRECT_COVERAGE }}
         if: ${{ github.event_name == 'push'}}
         run: |
           wget --header "Authorization: token ${GH_TOKEN}" \
