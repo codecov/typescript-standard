@@ -14,7 +14,6 @@ const callback = (error, response, body) => {
     const info = JSON.parse(body);
     commit_data = info['results'][0]
     coverage_percentage = commit_data['totals']['coverage']
-    console.log(`${coverage_percentage}`)
 
     // Coverage percentage should be CORRECT_COVERAGE environment variable on Travis || 77.77778
     if (coverage_percentage == process.env.CORRECT_COVERAGE) {
