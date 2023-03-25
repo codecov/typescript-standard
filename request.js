@@ -12,6 +12,7 @@ const callback = (error, response, body) => {
 
     console.log('Pinging Codecov\'s API..')
     const info = JSON.parse(body);
+    commit_data = info['results'][0]
     coverage_percentage = commit_data['totals']['coverage']
     console.log(`${coverage_percentage}`)
 
