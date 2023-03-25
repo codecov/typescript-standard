@@ -12,6 +12,8 @@ const callback = (error, response, body) => {
 
     console.log('Pinging Codecov\'s API..')
     const info = JSON.parse(body);
+    console.log('info')
+    console.log(`${info}`)
     commit_data = info['results'][0]
     coverage_percentage = commit_data['totals']['coverage']
 
@@ -20,11 +22,9 @@ const callback = (error, response, body) => {
         console.log('Success! Codecov\'s API returned the correct coverage percentage, '+ process.env.CORRECT_COVERAGE)
         return process.exit(0);
     }
-
-  }else{
-      console.log('Whoops, something is wrong D: Codecov did not return the correct coverage percentage. Coverage percentage should be '+ process.env.CORRECT_COVERAGE +' but Codecov returned '+coverage_percentage)
-
-        return process.exit(1);
+  } else {
+    console.log('Whoops, something is wrong D: Codecov did not return the correct coverage percentage. Coverage percentage should be '+ process.env.CORRECT_COVERAGE +' but Codecov returned '+coverage_percentage)
+    return process.exit(1);
   }
 }
 
