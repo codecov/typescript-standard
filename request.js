@@ -22,6 +22,7 @@ const callback = (error, response, body) => {
     } else {
       console.log('Codecov did not return the correct coverage percentage. Coverage percentage should be '+ process.env.CORRECT_COVERAGE +' but Codecov returned '+coverage_percentage)
       return process.exit(1);
+    }
   } else {
     console.log(`There was a problem calling the API. Please double check the url ${options.url}`)
     return process.exit(1);
