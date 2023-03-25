@@ -1,8 +1,8 @@
 export default class Index {
 
-    //This function is tested and part of it is uncovered 
+    //This function is tested and part of it is uncovered
     uncovered_if = (a = true) => {
-        if (a == true) { 
+        if (a == true) {
             return false
          } else {
             return true
@@ -17,9 +17,6 @@ export default class Index {
     //This function will not be tested by unit tests
     uncovered = () => {
         return true
-    }    
-    
+    }
+
 }
-
-
-    
