@@ -4,9 +4,7 @@ jobs:
   test-and-upstream:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
+      - uses: actions/checkout@v4
       - uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -20,16 +18,15 @@ jobs:
           npm uninstall tslint --no-save
           npm install
       - name: Run Tests
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          CORRECT_COVERAGE: ${{ secrets.CORRECT_COVERAGE }}
-        run: |
-          npm run test
+        run: npm run test
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
       - name: Check coverage
         run: node request.js
         env:
+          API_KEY: ${{ secrets.API_KEY }}
           CORRECT_COVERAGE: ${{ vars.CORRECT_COVERAGE }}
       - name: Upstream to Standards
         env:
