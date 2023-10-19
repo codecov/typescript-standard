@@ -3,9 +3,6 @@ on: [push, pull_request]
 jobs:
   test-and-upstream:
     runs-on: ubuntu-latest
-    permissions:
-      contents: 'write'
-      repository-projects: 'write'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
@@ -33,7 +30,7 @@ jobs:
           CORRECT_COVERAGE: ${{ vars.CORRECT_COVERAGE }}
       - name: Upstream to Standards
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           COVERAGE_SOURCE_FILE: ${{ secrets.COVERAGE_SOURCE_FILE }}
         if: ${{ github.event_name == 'push'}}
         run: |
