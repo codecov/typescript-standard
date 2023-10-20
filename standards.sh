@@ -42,5 +42,5 @@ echo "Commiting and pushing the coverage data to the standards repo."
 git add coverage_data
 git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
 git config --unset-all http.https://github.com/.extraheader
-git push origin --force
+git push --prune https://codecov:${GH_TOKEN}@github.com/codecov/standards.git
 echo "Push to upstream complete!"
