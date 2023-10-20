@@ -8,6 +8,8 @@ jobs:
       repository-projects: 'write'
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
       - uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -33,7 +35,7 @@ jobs:
           CORRECT_COVERAGE: ${{ vars.CORRECT_COVERAGE }}
       - name: Upstream to Standards (local)
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           COVERAGE_SOURCE_FILE: ${{ secrets.COVERAGE_SOURCE_FILE }}
         if: ${{ github.event_name == 'push'}}
         run: |
