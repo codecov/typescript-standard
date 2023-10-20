@@ -41,5 +41,6 @@ cp ../$PROJECT_NAME/coverage_totals.txt $COVERAGE_DEST_DIR/
 echo "Commiting and pushing the coverage data to the standards repo."
 git add coverage_data
 git commit -m "Updating coverage data for $PROJECT_NAME with SHA $COVERAGE_SHA"
+git config --unset-all http.https://github.com/.extraheader
 git push origin --force
 echo "Push to upstream complete!"
