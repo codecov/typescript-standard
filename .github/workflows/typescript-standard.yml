@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.STANDARDS_TOKEN }}
       - uses: actions/cache@v3
         with:
           path: ~/.npm
@@ -32,7 +32,7 @@ jobs:
           CORRECT_COVERAGE: ${{ vars.CORRECT_COVERAGE }}
       - name: Upstream to Standards
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.STANDARDS_TOKEN }}
           COVERAGE_SOURCE_FILE: ${{ secrets.COVERAGE_SOURCE_FILE }}
         if: ${{ github.event_name == 'push'}}
         run: |
